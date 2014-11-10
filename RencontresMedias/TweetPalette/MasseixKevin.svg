@@ -87,7 +87,7 @@
 				<text transform="matrix(1 0 0 1 123.2002 396.7559)" font-family="'Myriad-Roman'" font-size="20">dés</text>
 			</g>
 		</g>
-		<text transform="matrix(1 0 0 1 73 83.8496)" display="inline" font-family="'Myriad-Roman'" font-size="50">Catégorisation d’un évènement</text>
+		<text transform="matrix(1 0 0 1 73 83.8496)" display="inline" font-family="'Myriad-Roman'" font-size="50">Evaluer une présentation orale</text>
 		<text transform="matrix(1 0 0 1 44 202.8496)" display="inline" font-family="'Myriad-Roman'" font-size="15">Politique</text>
 		<text transform="matrix(1 0 0 1 68.5 326.3496)" display="inline" font-family="'Myriad-Roman'" font-size="15">Faits-divers</text>
 		<text transform="matrix(1 0 0 1 0 230.8496)" display="inline" font-family="'Myriad-Roman'" font-size="15">Sport</text>
@@ -331,7 +331,7 @@
 		</g>
 	</g>
 	<g id="Layer_2">
-		<text transform="matrix(1 0 0 1 98 41.8496)" fill="#636466" font-family="'Myriad-Italic'" font-size="50">Catégorisation d’un évènement</text>
+		<text transform="matrix(1 0 0 1 98 41.8496)" fill="#636466" font-family="'Myriad-Italic'" font-size="50">Evaluation d'une présentation</text>
 	</g>
 </g>
 </svg>
