@@ -5,22 +5,10 @@ var clics=[];
 // Identifiant des différent éléments de la tweet palette qui sont associés à leur couleurs respectives
 		 
 var elInt = [    
-			 {"idEle":"Poly1Indet","couleur":"#2c1317","hauteur":0}
-             ,{"idEle":"Poly2Indet","couleur":"#85404c","hauteur":0}
-             ,{"idEle":"Poly3Indet","couleur":"#c07784","hauteur":0}
-			 
-             ,{"idEle":"Poly3Det","couleur":"#bbf07f","hauteur":0}
-			 ,{"idEle":"Poly2Det","couleur":"#80a457","hauteur":0}
-			 ,{"idEle":"Poly1Det","couleur":"#40522c","hauteur":0}
-
-             ,{"idEle":"Poly3Suiveur","couleur":"#9459bb","hauteur":0}
-			 ,{"idEle":"Poly2Suiveur","couleur":"#441266","hauteur":0}
-			 ,{"idEle":"Poly1Suiveur","couleur":"#1c032d","hauteur":0}
-			 
-			 ,{"idEle":"Poly1Leader","couleur":"#272c3e","hauteur":0}
-             ,{"idEle":"Poly2Leader","couleur":"#1d2a57","hauteur":0}
-             ,{"idEle":"Poly3Leader","couleur":"#2e428a","hauteur":0}
- 
+			 {"idEle":"grdrond","couleur":"#2c1317","hauteur":0}
+             ,{"idEle":"moyrond","couleur":"#85404c","hauteur":0}
+             ,{"idEle":"moyenrond","couleur":"#c07784","hauteur":0}
+             ,{"idEle":"petitrond","couleur":"#bbf07f","hauteur":0} 
              ];
 var x;
 
@@ -116,20 +104,4 @@ function updateGraphBarD3(){
 			800 - margeGauche * (i+1);
 		});
 	*/
-}
-
-
-//Partie Bouton Slider
-
-function allowDrop(event) {event.preventDefault();} // on crée une fonction pour preventDefault
-var maDestination=document.getElementById('cursor1'); // on assigne l’élément à une variable
-maDestination.addEventListener("drop",cursorMoove); // on ajoute les événements
-maDestination.addEventListener("dragenter", allowDrop);
-maDestination.addEventListener("dragover", allowDrop); 
-
-//********************
-
-function cursorMoove (event) {
-	maDestination.position.x = 0;
-	maDestination.position.y = 10;	
 }
