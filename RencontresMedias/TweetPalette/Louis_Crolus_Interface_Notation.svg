@@ -22,7 +22,7 @@
 	<text transform="matrix(1 0 0 1 659.3223 309.8193)" fill="#006837" font-family="'MyriadPro-Regular'" font-size="25.9085">20/20</text>
 </g>
 <g id="Calque_11">
-	<text transform="matrix(1 0 0 1 455.7109 295)" fill="#006837" font-family="'MyriadPro-Regular'" font-size="16.1972">13/20</text>
+	<text id="note" transform="matrix(1 0 0 1 380.7109 295)" fill="#006837" font-family="'MyriadPro-Regular'" font-size="16.1972">13/20</text>
 </g>
 <g id="Calque_8">
 	<text transform="matrix(1 0 0 1 91.3047 309.8193)" fill="#FF0000" font-family="'MyriadPro-Regular'" font-size="25.9085">0/20</text>
