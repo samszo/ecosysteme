@@ -1,74 +1,126 @@
-var largeurTampon = 400;
+console.log('on y est');
+var clics=[];
+		 
+var elInt = [    
+			 
+			{"idEle":"Foudre","couleur":"Grey","hauteur":0} 
 
-function PageLoad(){
+             ,{"idEle":"Eclaircie","couleur":"#453F3F","hauteur":0} 
 
-	d3.select("#Soleil").on("click",AugmenterBarreSoleil);
+			 ,{"idEle":"Soleil","couleur":"Black","hauteur":0} 
 
-	d3.select("#Eclaircie").on("click",AugmenterBarreEclaircie);
+			 ,{"idEle":"Pluie","couleur":"Yellow","hauteur":0} 
+			 
+			 ,{"idEle":"Nuagebleu","couleur":"#FFFFC6","hauteur":0} 
 
-	d3.select("#Nuagebleu").on("click",AugmenterBarreNuagebleu);
+             ,{"idEle":"Neige","couleur":"#DBE4EB","hauteur":0} 
 
-	d3.select("#Neige").on("click",AugmenterBarreNeige);
+             ,{"idEle":"Gris","couleur":"#CDCCCC","hauteur":0} 
+ 
+             ];
+var x;
 
-	d3.select("#Gris").on("click",DiminuerBarreGris);
+function ajoutEvent()
+{
+	elInt.forEach(function(e){
+		ele = document.getElementById(e.idEle);
+		ele.setAttribute("class",'imgEvent');
+	});
+	d3.selectAll(".imgEvent")
+		.data(elInt)
+		.on("click",ajoutClic);
+	
+	x = d3.scale.linear()
+	.domain([0, 1000])
+	.range([0, 800]);
 
-	d3.select("#Pluie").on("click",DiminuerBarrePluie);
-
-	d3.select("#Foudre").on("click",DiminuerBarreFoudre);
-
-	d3.select("#barre").transition().duration(1000).attr("x2", largeurTampon);
 }
 
 
-function AugmenterBarreSoleil(){
-	
+function ajoutClic(d, i)
+{
+	d.hauteur += 10;
+	clics.push({"couleur":d.couleur, "hauteur":d.hauteur});
+	updateGraphBar(d);
 
-	d3.select("#barre").transition().duration(500).attr("x2", largeurTampon+80);
-
-	largeurTampon += 40;
 }
 
-function AugmenterBarreEclaircie(){
-	
 
-	d3.select("#barre").transition().duration(500).attr("x2", largeurTampon+60);
+function updateGraphBar(d)
+{
+	var margeGauche = 0;
 
-	largeurTampon += 40;
+	var largeur = (800 - margeGauche) / clics.length;
+
+	d3.select("svg")
+		.append("rect")
+		.attr("id", "bar" + clics.length)
+		.attr("y", 600 - d.hauteur/3 - 10)
+		.attr("x", 800)
+		.attr("height", d.hauteur/3 + 10)
+		.attr("width", 0)
+		.style("fill", d.couleur);
+
+	//modifie la largeur et la position de chaque barre du graphe
+	for(var i = 0; i <= clics.length; i++){
+		d3.select("#bar"+i)
+			.transition()
+			.duration(1500)
+			.attr("width", largeur)
+			.attr("x", margeGauche + 1 + largeur * (i-1));
+	}
 }
 
-function AugmenterBarreNuagebleu(){
-	
+function updateGraphBarD3()
+{
+	//d�finit une marge � gauche
+	var margeGauche = 200;
 
-	d3.select("#barre").transition().duration(500).attr("x2", largeurTampon+40);
+	//d�finit la largeur des barres du graphe
+	var largeur = (800 - margeGauche) / clics.length;
 
-	largeurTampon += 40;
+	//cr�e une barre pour la nouvelle temp�rature
+	d3.select("svg")
+		.selectAll(".bar")
+		.data(clics).enter()
+		.append("rect")
+		.attr("id", function(d,i){
+			"bar" + i;
+			})
+		.attr("class", "bar")
+		.attr("y", function(d,i){
+			return 600 - d.hauteur/3 - 10;
+		})
+		.attr("x", function(d,i){
+			return 800 - margeGauche * (i+1);
+		})
+		.attr("height", function(d,i){
+			return x(d.hauteur);
+		})
+		.attr("width", function(d) { return x(d.hauteur); })
+		.style("fill", function(d,i){
+			return d.couleur;
+		});
+
+	/*modifie la largeur et la position de chaque barre du graphe
+	d3.selectAll(".bar")
+		.transition()
+		.duration(1500)
+		.attr("x", function(d, i){
+			800 - margeGauche * (i+1);
+		});
+	*/
 }
 
-function AugmenterBarreNeige(){
-	
+function allowDrop(event) {event.preventDefault();} 
+var maDestination=document.getElementById('cursor1'); 
+maDestination.addEventListener("drop",cursorMoove); 
+maDestination.addEventListener("dragenter", allowDrop);
+maDestination.addEventListener("dragover", allowDrop); 
 
-	d3.select("#barre").transition().duration(500).attr("x2", largeurTampon+20);
+//********************
 
-	largeurTampon += 40;
-}
-
-function DiminuerBarreGris(){
-
-	d3.select("#barre").transition().duration(500).attr("x2", largeurTampon-20);
-	
-	largeurTampon -= 40;
-}
-
-function DiminuerBarrePluie(){
-
-	d3.select("#barre").transition().duration(500).attr("x2", largeurTampon-60);
-	
-	largeurTampon -= 40;
-}
-
-function DiminuerBarreFoudre(){
-
-	d3.select("#barre").transition().duration(500).attr("x2", largeurTampon-80);
-	
-	largeurTampon -= 40;
+function cursorMoove (event) {
+	maDestination.position.x = 0;
+	maDestination.position.y = 10;	
 }
