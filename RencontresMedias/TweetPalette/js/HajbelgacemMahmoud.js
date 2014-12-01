@@ -1,7 +1,10 @@
-console.log('on y est');
-var clics=[];
+window.onload = function(){
+	ajoutEvent();
+}
 
-var elInt = [
+var clics=[];
+		 
+var elInt = [ 
              {"idEle":"E10","couleur":"#0365f7","hauteur":0}
              ,{"idEle":"E9","couleur":"#03e3f7","hauteur":0}
              ,{"idEle":"E8","couleur":"#03f7aa","hauteur":0}
