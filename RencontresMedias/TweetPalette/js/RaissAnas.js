@@ -6,21 +6,12 @@ var clics=[];
 		 
 var elInt = [    
 			 
-			{"idEle":"yin","couleur":"Red","hauteur":0} 
+			{"idEle":"image3001","couleur":"Green","hauteur":0} 
 
-			,{"idEle":"negatif","couleur":"Pink","hauteur":0} 
+			,{"idEle":"image3012","couleur":"Red","hauteur":0} 
 
-             ,{"idEle":"yang","couleur":"Green","hauteur":0} 
-
-			 ,{"idEle":"smile","couleur":"Red","hauteur":0} 
-
-			 ,{"idEle":"smilen","couleur":"rgb(163, 250, 141)","hauteur":0} 
-			 
-			 ,{"idEle":"positif","couleur":"Green","hauteur":0} 
-
-			 
-
-             ,{"idEle":"yinyang","couleur":"Yellow","hauteur":0} 
+			,{"idEle":"image2995","couleur":"white","hauteur":0}
+             
 
              ];
 var x;
