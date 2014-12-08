@@ -15,7 +15,10 @@
    id="svg2985"
    version="1.1"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="Nouveau document 2">
+   sodipodi:docname="Nouveau document 2"
+   onload="ajoutEvent(evt)">
+   <script type="text/ecmascript" xlink:href="js/RafikBoukella.js" />
+	<script type="text/ecmascript" xlink:href="js/d3.js" />
   <defs
      id="defs2987" />
   <sodipodi:namedview
